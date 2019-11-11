@@ -8,7 +8,7 @@ target 'FirebaseReview' do
   # Pods for FirebaseReview
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
-pod "ILLoginKit"
+
 
 
   target 'FirebaseReviewTests' do
