@@ -1,11 +1,3 @@
-//
-//  LoginViewController.swift
-//  FirebaseReview
-//
-//  Created by Olimpia on 11/11/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -21,6 +13,7 @@ class LoginViewController: UIViewController {
         initialSetup()
       
     }
+    
     
     func initialSetup() {
         errorLabel.isHidden = true
