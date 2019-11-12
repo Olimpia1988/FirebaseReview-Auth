@@ -53,13 +53,27 @@ class SingUpViewController: UIViewController {
             showError(error!)
         
         } else {
+            let name = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let last = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let emailToSet = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (result, error) in
+            Auth.auth().createUser(withEmail: emailToSet, password: pass) { (result, error) in
                 if error != nil {
                     
                     self.showError("Error creating user")
                 } else {
-                 let fs = Firestore.firestore()
+                 let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["firstName": name, "lastName": last, "uid": result!.user.uid]) { (error) in
+                        if error != nil {
+                            self.showError("User data couldn't be safe on the data base")
+                            
+                        }
+                    }
+                    
+                    //Transition to the home screen
+                    self.trainsitionToHime()
+                    
                 }
             }
         }
@@ -74,6 +88,12 @@ class SingUpViewController: UIViewController {
         errorLabel.isHidden = false
         errorLabel.text = message
         
+    }
+    
+    func trainsitionToHime() {
+        let homeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.storyBoardID) as? HomeViewController
+        view.window?.rootViewController = homeVC
+        view.window?.makeKeyAndVisible()
     }
     
    

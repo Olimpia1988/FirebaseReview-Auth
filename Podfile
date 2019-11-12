@@ -8,7 +8,8 @@ target 'FirebaseReview' do
   # Pods for FirebaseReview
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
-
+pod 'Firebase/Analytics'
+pod 'Firebase/Core'
 
 
   target 'FirebaseReviewTests' do

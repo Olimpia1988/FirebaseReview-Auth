@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F7C63A0950C10F02FAC7002355DF088C"
+               BlueprintIdentifier = "6A5585AC148C9802D315691C407D358A"
                BuildableName = "Pods_FirebaseReview.framework"
                BlueprintName = "Pods-FirebaseReview"
                ReferencedContainer = "container:Pods.xcodeproj">

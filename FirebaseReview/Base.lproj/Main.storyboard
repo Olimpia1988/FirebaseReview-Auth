@@ -142,7 +142,7 @@
         <!--Home View Controller-->
         <scene sceneID="oWt-UZ-U2c">
             <objects>
-                <viewController id="TJb-mG-Q6s" customClass="HomeViewController" customModule="FirebaseReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="TJb-mG-Q6s" customClass="HomeViewController" customModule="FirebaseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kmf-3o-F1r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

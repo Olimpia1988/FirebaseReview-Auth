@@ -260,6 +260,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Copyright 2019 Google
 
+## FirebaseAnalytics
+
+Copyright 2019 Google
+
 ## FirebaseAuth
 
 
@@ -1084,6 +1088,10 @@ Copyright 2019 Google
    limitations under the License.
 
 
+## FirebaseInstanceID
+
+Copyright 2019 Google
+
 ## GTMSessionFetcher
 
 
@@ -1289,6 +1297,10 @@ Copyright 2019 Google
    See the License for the specific language governing permissions and
    limitations under the License.
 
+
+## GoogleAppMeasurement
+
+Copyright 2019 Google
 
 ## GoogleUtilities
 
