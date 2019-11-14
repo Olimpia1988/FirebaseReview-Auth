@@ -34,7 +34,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7w-5c-eq3"/>
-                                            <segue destination="bTv-TF-HqY" kind="show" id="dYL-C6-VW4"/>
+                                            <segue destination="bTv-TF-HqY" kind="presentation" id="QDY-DE-cqb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.79710144927537" y="117.85714285714285"/>
+            <point key="canvasLocation" x="570" y="118"/>
         </scene>
         <!--Sing Up View Controller-->
         <scene sceneID="rF3-y1-89q">
@@ -105,7 +105,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzy-mF-L3v">
                                         <rect key="frame" x="0.0" y="350" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -171,11 +171,11 @@
             <objects>
                 <viewController id="bTv-TF-HqY" customClass="LoginViewController" customModule="FirebaseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EgE-CI-eI6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-Kw-SMe">
-                                <rect key="frame" x="40" y="84" width="334" height="260"/>
+                                <rect key="frame" x="40" y="40" width="334" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0dG-zt-boW">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -200,14 +200,17 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH2-d5-Zhf">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WEg-xg-Y3B" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="C39-kT-R1H"/>
+                                    <constraint firstItem="iH2-d5-Zhf" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="Ca0-2a-xSJ"/>
                                     <constraint firstItem="iH2-d5-Zhf" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="IDl-0A-f6x"/>
                                     <constraint firstItem="dW6-Q2-Xzk" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="NcT-yR-feS"/>
+                                    <constraint firstItem="dW6-Q2-Xzk" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="XMn-LX-uep"/>
+                                    <constraint firstItem="WEg-xg-Y3B" firstAttribute="height" secondItem="0dG-zt-boW" secondAttribute="height" id="kn7-Ll-sAO"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -221,10 +224,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="cS8-yY-uQj"/>
                     <connections>
-                        <outlet property="emailTextField" destination="WEg-xg-Y3B" id="180-R2-EuT"/>
+                        <outlet property="emailUserTextField" destination="0dG-zt-boW" id="Dvh-q5-9Lf"/>
                         <outlet property="errorLabel" destination="iH2-d5-Zhf" id="jxZ-KW-FQm"/>
                         <outlet property="loginButton" destination="dW6-Q2-Xzk" id="Ono-yU-HAz"/>
-                        <outlet property="nameTextField" destination="0dG-zt-boW" id="Dvh-q5-9Lf"/>
+                        <outlet property="passwordTextField" destination="WEg-xg-Y3B" id="180-R2-EuT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zlo-zS-Dcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,7 +249,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQ9-dn-1xC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="-336" y="118"/>
         </scene>
     </scenes>
 </document>
