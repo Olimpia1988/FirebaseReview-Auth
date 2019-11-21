@@ -83,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121811032386E81000CE42AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12C4F64A237624C200853231 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		121811042386E82200CE42AD /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				12C4F64D237624C300853231 /* Assets.xcassets */,
+				12C4F64F237624C300853231 /* LaunchScreen.storyboard */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		12203593237DFB5B00DD8D14 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				12203593237DFB5B00DD8D14 /* New Group */,
-				12C4F643237624C200853231 /* FirebaseReview */,
+				12C4F643237624C200853231 /* FirebaseUtilities */,
 				12C4F65A237624C300853231 /* FirebaseReviewTests */,
 				12C4F642237624C200853231 /* Products */,
 				87CEC55C568C70669D81D47D /* Pods */,
@@ -112,21 +129,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		12C4F643237624C200853231 /* FirebaseReview */ = {
+		12C4F643237624C200853231 /* FirebaseUtilities */ = {
 			isa = PBXGroup;
 			children = (
 				12C4F644237624C200853231 /* AppDelegate.swift */,
+				12C4F6682379BED500853231 /* AuthService.swift */,
 				12C4F646237624C200853231 /* SceneDelegate.swift */,
 				12C4F675237B148800853231 /* Utilities */,
-				12C4F6682379BED500853231 /* AuthService.swift */,
 				12C4F6722379F59A00853231 /* Controllers */,
-				12C4F64A237624C200853231 /* Main.storyboard */,
+				121811032386E81000CE42AD /* Views */,
+				121811042386E82200CE42AD /* Extras */,
 				12C4F66A2379C11600853231 /* GoogleService-Info.plist */,
-				12C4F64D237624C300853231 /* Assets.xcassets */,
-				12C4F64F237624C300853231 /* LaunchScreen.storyboard */,
 				12C4F652237624C300853231 /* Info.plist */,
 			);
-			path = FirebaseReview;
+			path = FirebaseUtilities;
 			sourceTree = "<group>";
 		};
 		12C4F65A237624C300853231 /* FirebaseReviewTests */ = {
