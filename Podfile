@@ -10,7 +10,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Analytics'
 pod 'Firebase/Core'
-
+pod 'RHSideButtons'
 
   target 'FirebaseReviewTests' do
     inherit! :search_paths

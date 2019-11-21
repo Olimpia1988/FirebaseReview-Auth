@@ -5,13 +5,13 @@ class Utilities {
     static func styleTextField(_ textfield: UITextField) {
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
-        bottomLine.backgroundColor = #colorLiteral(red: 0.6526476741, green: 0.6291747093, blue: 0.9187689424, alpha: 1)
+        bottomLine.backgroundColor = #colorLiteral(red: 0.001339468872, green: 0.6090487838, blue: 0.8983275294, alpha: 1)
         textfield.borderStyle = .none
         textfield.layer.addSublayer(bottomLine)
     }
     
     static func styleFilledButton(_ button: UIButton) {
-        button.backgroundColor = #colorLiteral(red: 0.6526476741, green: 0.6291747093, blue: 0.9187689424, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.001339468872, green: 0.6090487838, blue: 0.8983275294, alpha: 1)
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
     }

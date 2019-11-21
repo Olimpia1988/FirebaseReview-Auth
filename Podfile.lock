@@ -102,12 +102,14 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - RHSideButtons (1.1.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - RHSideButtons
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -127,6 +129,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - RHSideButtons
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -145,7 +148,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
 
-PODFILE CHECKSUM: 4f508f1d414f7bf666df03105b57cc9defe73c55
+PODFILE CHECKSUM: 890665479ce5ced134977c1a496792dba48fe1e4
 
 COCOAPODS: 1.6.0
