@@ -1,30 +1,35 @@
-//
-//  HomeViewController.swift
-//  FirebaseReview
-//
-//  Created by Olimpia on 11/11/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
+ 
+    let tableView = MainView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        delegatesAndAddedViews()
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func delegatesAndAddedViews() {
+        self.view.addSubview(tableView)
+        tableView.tableView.delegate = self
+        tableView.tableView.dataSource = self
     }
-    */
 
+
+}
+
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TasksCell else { return UITableViewCell() }
+        cell.taskLabel.text = "test"
+        return cell
+    }
+    
+    
 }
