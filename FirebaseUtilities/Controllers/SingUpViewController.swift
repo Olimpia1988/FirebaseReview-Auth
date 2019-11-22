@@ -92,8 +92,12 @@ class SingUpViewController: UIViewController {
     
     func trainsitionToHime() {
         let homeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.storyBoardID) as? HomeViewController
-        view.window?.rootViewController = homeVC
+        let homeVC1 = UINavigationController(rootViewController: homeVC!)
+        view.window?.rootViewController = homeVC1
         view.window?.makeKeyAndVisible()
+        
+        //TODO: add nav controller
+        
     }
     
    

@@ -1,13 +1,26 @@
 import UIKit
 
 class HomeViewController: UIViewController {
- 
+    
     let tableView = MainView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegatesAndAddedViews()
-       
+        setUpNavBars()
+    }
+    
+    func setUpNavBars() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!]
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        navigationItem.title = "Test"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsVC))
+    }
+    
+    @objc func settingsVC() {
+        let settingsVC = SettingsViewController()
+        self.navigationController?.pushViewController(settingsVC, animated: true)
     }
     
     func delegatesAndAddedViews() {
@@ -15,8 +28,8 @@ class HomeViewController: UIViewController {
         tableView.tableView.delegate = self
         tableView.tableView.dataSource = self
     }
-
-
+    
+    
 }
 
 

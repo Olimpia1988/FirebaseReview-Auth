@@ -1,12 +1,5 @@
-//
-//  SceneDelegate.swift
-//  FirebaseReview
-//
-//  Created by Olimpia on 11/8/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import UIKit
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,7 +8,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
       
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window?.windowScene = scene
+
+
+        if AuthServiceSetUp.manager.currentUSer != nil {
+
+            let homeVC = HomeViewController()
+            let navController = UINavigationController(rootViewController: homeVC)
+
+            window?.rootViewController = navController
+        }
+
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

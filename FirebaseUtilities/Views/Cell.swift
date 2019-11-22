@@ -1,11 +1,3 @@
-//
-//  TasksCell.swift
-//  Pre-Thanksgiving-Review
-//
-//  Created by Olimpia on 11/21/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import UIKit
 
 class TasksCell: UITableViewCell {
@@ -29,7 +21,7 @@ class TasksCell: UITableViewCell {
     
     private func setConstrains() {
         taskLabel.translatesAutoresizingMaskIntoConstraints = false
-        [taskLabel.centerXAnchor.constraint(equalTo: centerXAnchor), taskLabel.centerYAnchor.constraint(equalTo: centerYAnchor)].forEach{ $0.isActive = true }
+        [taskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30), taskLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -11), taskLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11), taskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -11) ].forEach{ $0.isActive = true }
 
     }
 

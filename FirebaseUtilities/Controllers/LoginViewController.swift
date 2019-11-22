@@ -34,7 +34,9 @@ class LoginViewController: UIViewController {
                 self.errorLabel.text = error!.localizedDescription
             } else {
                 let homeVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.storyBoardID) as? HomeViewController
-                self.view.window?.rootViewController = homeVC
+                let navController = UINavigationController(rootViewController: homeVC!)
+                
+                self.view.window?.rootViewController = navController
                 self.view.window?.makeKeyAndVisible()
             }
         }
@@ -42,3 +44,6 @@ class LoginViewController: UIViewController {
     
 
 }
+
+
+
