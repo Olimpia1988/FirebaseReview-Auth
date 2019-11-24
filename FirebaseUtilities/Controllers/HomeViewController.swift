@@ -1,4 +1,5 @@
 import UIKit
+import RHSideButtons
 
 class HomeViewController: UIViewController {
     
@@ -14,8 +15,13 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!]
         UINavigationBar.appearance().titleTextAttributes = attrs
-        navigationItem.title = "Test"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsVC))
+        navigationItem.title = "Tasks"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "moreOptions"), style: .plain, target: self, action: #selector(setupButtonTasks))
+    }
+    
+    @objc func setupButtonTasks() {
+        print("here I call the button actions")
     }
     
     @objc func settingsVC() {
@@ -28,6 +34,16 @@ class HomeViewController: UIViewController {
         tableView.tableView.delegate = self
         tableView.tableView.dataSource = self
     }
+    
+    
+//    let triggerButton = RHTriggerButtonView(pressedImage: UIImage(named: "exit_icon")!) {
+//        $0.image = UIImage(named: "more")
+//        $0.hasShadow = true
+//    }
+    
+//    sideButtonsView = RHSideButtons(parentView: view, triggerButton: triggerButton)
+//    sideButtonsView.delegate = self
+//    sideButtonsView.dataSource = self
     
     
 }
@@ -46,3 +62,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
+
