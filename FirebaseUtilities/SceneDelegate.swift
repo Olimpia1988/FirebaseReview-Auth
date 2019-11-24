@@ -1,6 +1,7 @@
 import UIKit
 
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -20,6 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navController = UINavigationController(rootViewController: homeVC)
 
             window?.rootViewController = navController
+        } else {
+            if AuthServiceSetUp.manager.currentUSer == nil {
+              let srb = UIStoryboard(name: "Main", bundle: nil)
+              let startingVC = srb.instantiateViewController(identifier: Constants.Storyboard.startingVC)
+                window?.rootViewController = startingVC
+            }
         }
 
         window?.makeKeyAndVisible()

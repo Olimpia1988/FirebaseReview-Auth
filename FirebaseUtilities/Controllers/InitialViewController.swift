@@ -2,31 +2,22 @@ import UIKit
 import FirebaseAuth
 import AVFoundation
 
-
-
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
     
     //MARK: Properties
     var videoLayer: AVPlayerLayer?
     var videoPlayer: AVPlayer?
   
-    
-
-   //MARK: Outlets
- 
+    //MARK: Outlets
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-       
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        setUpVideo()
-    }
+ 
     
     @IBAction func signupAction(_ sender: Any) {
     }
@@ -35,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     private func initialSetup() {
-        Utilities.styleFilledButton(singUpButton)
+Utilities.styleFilledButton(singUpButton)
         Utilities.styleHollowButton(loginButton)
         
     }
@@ -65,7 +56,4 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITextFieldDelegate {
-    
-    
-}
+

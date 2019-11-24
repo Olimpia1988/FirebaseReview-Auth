@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirebaseReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialVC" id="BYZ-38-t0r" customClass="InitialViewController" customModule="FirebaseReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ZH-pJ-GC9"/>
-                                            <segue destination="lJB-W2-ImO" kind="showDetail" id="0ZI-jO-0zE"/>
+                                            <segue destination="lJB-W2-ImO" kind="presentation" id="cNa-2J-dNc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sh-cJ-gdJ">
@@ -34,7 +34,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7w-5c-eq3"/>
-                                            <segue destination="bTv-TF-HqY" kind="presentation" id="QDY-DE-cqb"/>
+                                            <segue destination="bTv-TF-HqY" kind="presentation" id="7eN-ad-E8p"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -105,7 +105,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzy-mF-L3v">
                                         <rect key="frame" x="0.0" y="350" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -126,6 +126,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WCt-HW-fft"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2fQ-ud-AJb"/>
                     <connections>
                         <outlet property="email" destination="lOc-6i-kDP" id="6Pm-vd-O8W"/>
                         <outlet property="errorLabel" destination="Lzy-mF-L3v" id="7Py-Q8-rWq"/>
@@ -200,7 +201,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH2-d5-Zhf">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

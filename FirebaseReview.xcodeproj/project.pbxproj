@@ -10,9 +10,11 @@
 		0F99CB07AA776852FED9AEF4 /* Pods_FirebaseReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35548293AE9D2BBDBA1BB2F8 /* Pods_FirebaseReview.framework */; };
 		121811062386E93000CE42AD /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121811052386E93000CE42AD /* TableView.swift */; };
 		121811082386E9B100CE42AD /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121811072386E9B100CE42AD /* Cell.swift */; };
+		12BD2E07238B0936002B6E40 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD2E06238B0936002B6E40 /* CreatePostVC.swift */; };
+		12BD2E09238B097B002B6E40 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BD2E08238B097B002B6E40 /* CreatePostView.swift */; };
 		12C4F645237624C200853231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4F644237624C200853231 /* AppDelegate.swift */; };
 		12C4F647237624C200853231 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4F646237624C200853231 /* SceneDelegate.swift */; };
-		12C4F649237624C200853231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4F648237624C200853231 /* ViewController.swift */; };
+		12C4F649237624C200853231 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4F648237624C200853231 /* InitialViewController.swift */; };
 		12C4F64C237624C200853231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C4F64A237624C200853231 /* Main.storyboard */; };
 		12C4F64E237624C300853231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12C4F64D237624C300853231 /* Assets.xcassets */; };
 		12C4F651237624C300853231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C4F64F237624C300853231 /* LaunchScreen.storyboard */; };
@@ -44,10 +46,12 @@
 		121811052386E93000CE42AD /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		121811072386E9B100CE42AD /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		12203592237DCD9F00DD8D14 /* bigmouths.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigmouths.mp4; sourceTree = "<group>"; };
+		12BD2E06238B0936002B6E40 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
+		12BD2E08238B097B002B6E40 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		12C4F641237624C200853231 /* FirebaseReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C4F644237624C200853231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C4F646237624C200853231 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		12C4F648237624C200853231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12C4F648237624C200853231 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		12C4F64B237624C200853231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12C4F64D237624C300853231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12C4F650237624C300853231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				121811052386E93000CE42AD /* TableView.swift */,
 				12ECA79A2386F40700C1C3BC /* ButtonView.swift */,
 				12ECA79E2388715A00C1C3BC /* SeetingsView.swift */,
+				12BD2E08238B097B002B6E40 /* CreatePostView.swift */,
 				121811072386E9B100CE42AD /* Cell.swift */,
 			);
 			path = Views;
@@ -175,7 +180,8 @@
 				12C4F66E2379F58700853231 /* LoginViewController.swift */,
 				12C4F6702379F58F00853231 /* HomeViewController.swift */,
 				12ECA79C2388703C00C1C3BC /* SettingsViewController.swift */,
-				12C4F648237624C200853231 /* ViewController.swift */,
+				12BD2E06238B0936002B6E40 /* CreatePostVC.swift */,
+				12C4F648237624C200853231 /* InitialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -403,7 +409,9 @@
 				121811062386E93000CE42AD /* TableView.swift in Sources */,
 				12ECA79F2388715A00C1C3BC /* SeetingsView.swift in Sources */,
 				12ECA79B2386F40700C1C3BC /* ButtonView.swift in Sources */,
-				12C4F649237624C200853231 /* ViewController.swift in Sources */,
+				12BD2E09238B097B002B6E40 /* CreatePostView.swift in Sources */,
+				12C4F649237624C200853231 /* InitialViewController.swift in Sources */,
+				12BD2E07238B0936002B6E40 /* CreatePostVC.swift in Sources */,
 				12C4F645237624C200853231 /* AppDelegate.swift in Sources */,
 				12C4F66D2379F53800853231 /* SingUpViewController.swift in Sources */,
 				12C4F647237624C200853231 /* SceneDelegate.swift in Sources */,

@@ -11,8 +11,8 @@ class AuthServiceSetUp {
     
     var currentUSer: User? {
         return auth.currentUser
-        
     }
+    
 
     
 }
