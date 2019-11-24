@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8D19191ABEA88E04A9996C36B7A2425"
-               BuildableName = "Pods_FirebaseReview.framework"
-               BlueprintName = "Pods-FirebaseReview"
+               BlueprintIdentifier = "30929B52C58C95BA6FB2C00F061E37CA"
+               BuildableName = "ExpandingMenu.bundle"
+               BlueprintName = "ExpandingMenu-ExpandingMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

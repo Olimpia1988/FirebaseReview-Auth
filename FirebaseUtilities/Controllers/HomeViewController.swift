@@ -1,5 +1,6 @@
 import UIKit
-import RHSideButtons
+import ExpandingMenu
+
 
 class HomeViewController: UIViewController {
     
@@ -9,6 +10,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         delegatesAndAddedViews()
         setUpNavBars()
+        expandingButton()
     }
     
     func setUpNavBars() {
@@ -16,9 +18,9 @@ class HomeViewController: UIViewController {
         let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!]
         UINavigationBar.appearance().titleTextAttributes = attrs
         navigationItem.title = "Tasks"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsVC))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "moreOptions"), style: .plain, target: self, action: #selector(setupButtonTasks))
-    }
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsVC))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "moreOptions"), style: .plain, target: self, action: #selector(setupButtonTasks))
+        }
     
     @objc func setupButtonTasks() {
         print("here I call the button actions")
@@ -35,15 +37,25 @@ class HomeViewController: UIViewController {
         tableView.tableView.dataSource = self
     }
     
+    func expandingButton() {
     
-//    let triggerButton = RHTriggerButtonView(pressedImage: UIImage(named: "exit_icon")!) {
-//        $0.image = UIImage(named: "more")
-//        $0.hasShadow = true
-//    }
+        let menuButtonSize: CGSize = CGSize(width: 50.0, height: 50.0)
+        let menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), image: UIImage(named: "moreOptions")!, rotatedImage: UIImage(named: "moreOptions")!)
+        menuButton.center = CGPoint(x: self.view.bounds.width - 32.0, y: self.view.bounds.height - 72.0)
+        view.addSubview(menuButton)
+
+        let item1 = ExpandingMenuItem(size: menuButtonSize, title: "My tasks", image: UIImage(named: "myTask")!, highlightedImage: UIImage(named: "myTask")!, backgroundImage: UIImage(named: "myTask"), backgroundHighlightedImage: UIImage(named: "myTask")) { () -> Void in
+                    // Do some action
+                }
+
+        let item5 = ExpandingMenuItem(size: menuButtonSize, title: "Sort by date", image: UIImage(named: "date")!, highlightedImage: UIImage(named: "date")!, backgroundImage: UIImage(named: "date"), backgroundHighlightedImage: UIImage(named: "date")) { () -> Void in
+                    // Do some action
+                }
+                
+        menuButton.addMenuItems([item1, item5])
+    }
     
-//    sideButtonsView = RHSideButtons(parentView: view, triggerButton: triggerButton)
-//    sideButtonsView.delegate = self
-//    sideButtonsView.dataSource = self
+    
     
     
 }

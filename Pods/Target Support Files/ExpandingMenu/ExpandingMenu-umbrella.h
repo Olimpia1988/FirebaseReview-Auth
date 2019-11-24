@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double RHSideButtonsVersionNumber;
-FOUNDATION_EXPORT const unsigned char RHSideButtonsVersionString[];
+FOUNDATION_EXPORT double ExpandingMenuVersionNumber;
+FOUNDATION_EXPORT const unsigned char ExpandingMenuVersionString[];
 

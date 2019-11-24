@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BBEEB274ABAA56C4062A635D586E2CDE"
-               BlueprintName = "RHSideButtons"
+               BlueprintIdentifier = "56E4BBD14EF1A53AA2241682F86A4B5A"
+               BlueprintName = "ExpandingMenu"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RHSideButtons.framework">
+               BuildableName = "ExpandingMenu.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
