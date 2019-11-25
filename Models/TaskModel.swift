@@ -1,4 +1,3 @@
-
 import Foundation
 import FirebaseFirestore
 
@@ -7,9 +6,9 @@ struct Task {
     let body: String
     let id: String
     let creatorID: String
-    let dateCreated: Date?
+    let dateCreated: Date
     
-    init(title: String, body: String, creatorID: String, dateCreated: Date? = nil) {
+    init(title: String, body: String, creatorID: String, dateCreated: Date) {
         self.title = title
         self.body = body
         self.creatorID = creatorID

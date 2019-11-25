@@ -5,7 +5,6 @@ import FirebaseAuth
 
 class CreatePostVC: UIViewController {
     
-    let tasks = Task?.self
     let postView = CreatePostView()
     
     override func viewDidLoad() {
@@ -21,20 +20,23 @@ class CreatePostVC: UIViewController {
         let attrs = [NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!]
         UINavigationBar.appearance().titleTextAttributes = attrs
         navigationItem.title = "Create a Task"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(postData))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(postData))
         
     }
     
     
-    func validateText() -> String? {
-        if postView.titleTextField.text?.trimmingCharacters(in: .whitespaces) == "" && postView.descriptionText.text.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            postView.errorLabel.isHidden = false
-             postView.errorLabel.text = "Please add a title to your task"
-            return postView.errorLabel.text
-           
+    func validateText() -> Bool {
+        
+        if postView.titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && postView.descriptionText.text.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+            return true
+            
+            
+        } else {
+            showAlert(title: "Error", message: "Please add values to the fields")
+            return false
         }
         
-        return " "
+        
         
     }
     func showError(_ message: String) {
@@ -44,34 +46,33 @@ class CreatePostVC: UIViewController {
     }
     
     func transitionBack() {
-    showAlert(title: "test", message: "test") { (action) in
-          let srb = UIStoryboard(name: "Main", bundle: nil)
-                           let homeVC = srb.instantiateViewController(identifier: Constants.Storyboard.storyBoardID)
-        let navCont = UINavigationController(rootViewController: homeVC)
-                self.view.window?.rootViewController = navCont
-                self.view.window?.makeKeyAndVisible()
-    }
-    }
-    
-  @objc func postData() {
-    
-    let user = Auth.auth().currentUser
-    let errorMessage = validateText()
-    
-    if user != nil && errorMessage != nil {
-        let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid)
-        FirestoreService.manager.createPost(post: newTask) { (result) in
-            self.transitionBack()
+        showAlert(title: "✔️", message: "You added a task to the list!") { (action) in
+            let srb = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = srb.instantiateViewController(identifier: Constants.Storyboard.storyBoardID)
+            let navCont = UINavigationController(rootViewController: homeVC)
+            self.view.window?.rootViewController = navCont
+            self.view.window?.makeKeyAndVisible()
         }
-
-        
-        
-    } else {
-        showError(errorMessage!)
     }
-
+    
+    @objc func postData() {
         
-   
+        let user = Auth.auth().currentUser
+        let errorMessage = validateText()
+        
+        if user != nil && errorMessage == true {
+//            let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid)
+            let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid, dateCreated: postView.datePicker.date)
+            FirestoreService.manager.createPost(post: newTask) { (result) in
+                self.transitionBack()
+            }
+            
+            
+            
+        } else {
+            showError("Please add values to the fields")
+        }
+        
     }
-
+    
 }

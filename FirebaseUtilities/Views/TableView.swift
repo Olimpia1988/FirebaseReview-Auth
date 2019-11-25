@@ -4,10 +4,12 @@ class MainView: UIView {
 
     
       lazy var tableView: UITableView = {
-         let cell = UITableView()
-         cell.frame = bounds
-        cell.register(TasksCell.self, forCellReuseIdentifier: "taskCell")
-         return cell
+         let tableView = UITableView()
+         tableView.frame = bounds
+        
+        tableView.register(TasksCell.self, forCellReuseIdentifier: "taskCell")
+        
+         return tableView
      }()
     
     override init(frame: CGRect) {

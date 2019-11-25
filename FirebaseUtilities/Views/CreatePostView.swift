@@ -18,6 +18,8 @@ class CreatePostView: UIView {
     
     lazy var errorLabel: UILabel = {
         let errorLabel = UILabel()
+        errorLabel.textColor = .red
+        errorLabel.textAlignment = .center
         
         return errorLabel
     }()
@@ -61,7 +63,7 @@ class CreatePostView: UIView {
             }
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        [errorLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -22), errorLabel.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 30), errorLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 22), errorLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)]
+        [errorLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -22), errorLabel.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 30), errorLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 22), errorLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{ $0.isActive = true }
         
         
         
