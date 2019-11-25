@@ -15,14 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = scene
 
 
-        if AuthServiceSetUp.manager.currentUSer != nil {
+        if FirebaseAuthService.manager.currentUser != nil {
 
             let homeVC = HomeViewController()
             let navController = UINavigationController(rootViewController: homeVC)
 
             window?.rootViewController = navController
         } else {
-            if AuthServiceSetUp.manager.currentUSer == nil {
+            if FirebaseAuthService.manager.currentUser == nil {
               let srb = UIStoryboard(name: "Main", bundle: nil)
               let startingVC = srb.instantiateViewController(identifier: Constants.Storyboard.startingVC)
                 window?.rootViewController = startingVC

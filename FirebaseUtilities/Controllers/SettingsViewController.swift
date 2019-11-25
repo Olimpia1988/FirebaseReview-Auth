@@ -24,14 +24,14 @@ class SettingsViewController: UIViewController {
     }
     
     @objc func signoutFromFirebase() {
-        print("fucking work!")
-//      try! Auth.auth().signOut()
-//
-//        if let storyboard = self.storyboard {
-//            let vc = storyboard.instantiateViewController(withIdentifier: "\(Constants.Storyboard.startingVC)") as! InitialViewController
-//                    self.present(vc, animated: false, completion: nil)
-//                }
-        
+       try! Auth.auth().signOut()
+        showAlert(title: "Sign Out?", message: "Are you sure you want to sign out") { (action) in
+            let srb = UIStoryboard(name: "Main", bundle: nil)
+                             let startingVC = srb.instantiateViewController(identifier: Constants.Storyboard.startingVC)
+                  self.view.window?.rootViewController = startingVC
+                  self.view.window?.makeKeyAndVisible()
+        }
+
     }
     
     

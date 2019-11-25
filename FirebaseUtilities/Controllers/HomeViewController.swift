@@ -6,11 +6,23 @@ class HomeViewController: UIViewController {
     
     let tableView = MainView()
     
+    var allTasks = [Task]() {
+        didSet {
+            tableView.tableView.reloadData()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegatesAndAddedViews()
         setUpNavBars()
         expandingButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAllTasks()
+        
     }
     
     func setUpNavBars() {
@@ -56,6 +68,16 @@ class HomeViewController: UIViewController {
         menuButton.addMenuItems([item1, item5])
     }
     
+    func getAllTasks() {
+        FirestoreService.manager.getAllPosts { (result) in
+            switch result {
+            case .success(let tasks):
+                self.allTasks = tasks
+            case .failure(let error):
+                print("There was an error loading data from the cloud: \(error)")
+            }
+        }
+    }
     
     
     
@@ -64,12 +86,15 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return allTasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TasksCell else { return UITableViewCell() }
-        cell.taskLabel.text = "test"
+        
+        let singleTask = allTasks[indexPath.row]
+        cell.taskLabel.text = singleTask.title
+        cell.detailTextLabel?.text = singleTask.body
         return cell
     }
     
