@@ -77,7 +77,9 @@ class HomeViewController: UIViewController {
         }
         
         let item2 = ExpandingMenuItem(size: menuButtonSize, title: "Sort by date", image: UIImage(named: "date")!, highlightedImage: UIImage(named: "date")!, backgroundImage: UIImage(named: "date"), backgroundHighlightedImage: UIImage(named: "date")) { () -> Void in
-            print("here is where I sort by date")
+            self.allTasks = self.allTasks.sorted(by: { (taskOne, taskTwo) -> Bool in
+                taskOne.dateCreated < taskTwo.dateCreated
+            })
         }
         
         let item3 = ExpandingMenuItem(size: menuButtonSize, title: "All Tasks", image: UIImage(named: "allTasks")!, highlightedImage: UIImage(named: "allTasks")!, backgroundImage: UIImage(named: "allTasks"), backgroundHighlightedImage: UIImage(named: "allTasks")) { () -> Void in
@@ -109,13 +111,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        //as? TasksCell else { return UITableViewCell() }
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TasksCell else { return UITableViewCell() }
         
         let singleTask = allTasks[indexPath.row]
         cell.selectionStyle = .none
-        cell.textLabel?.text = singleTask.title
-        cell.detailTextLabel?.text = "\(singleTask.dateCreated)"
+        cell.taskLabel.text = singleTask.title
+    
+        cell.detailTextLabel?.text = singleTask.dateCreated.getDate()
+        print("\(singleTask.dateCreated.getDate())")
         
         return cell
     }
@@ -128,3 +131,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension Int {
+    func getDate() -> String{
+        let time = TimeInterval(self)
+        let date = Date(timeIntervalSince1970: time)
+        let format = DateFormatter()
+        format.dateStyle = .medium
+        let finishedString = format.string(from: date)
+        return finishedString
+        
+    }
+}

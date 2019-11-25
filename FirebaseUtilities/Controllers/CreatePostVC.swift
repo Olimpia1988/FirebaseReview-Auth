@@ -7,12 +7,22 @@ class CreatePostVC: UIViewController {
     
     let postView = CreatePostView()
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(postView)
         view.backgroundColor = .white
         initalSetUp()
+        
     }
+    
+   // let timeMade = String(Date().timeIntervalSince1970)
+
+    
+    
+ 
     
     func initalSetUp() {
         postView.errorLabel.isHidden = true
@@ -61,8 +71,8 @@ class CreatePostVC: UIViewController {
         let errorMessage = validateText()
         
         if user != nil && errorMessage == true {
-//            let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid)
-            let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid, dateCreated: postView.datePicker.date)
+
+            let newTask = Task(title: postView.titleTextField.text!, body: postView.descriptionText.text, creatorID: user!.uid, dateCreated: Int(postView.datePicker.date.timeIntervalSince1970))
             FirestoreService.manager.createPost(post: newTask) { (result) in
                 self.transitionBack()
             }

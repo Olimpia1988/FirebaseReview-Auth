@@ -6,9 +6,9 @@ struct Task {
     let body: String
     let id: String
     let creatorID: String
-    let dateCreated: Date
+    let dateCreated: Int
     
-    init(title: String, body: String, creatorID: String, dateCreated: Date) {
+    init(title: String, body: String, creatorID: String, dateCreated: Int) {
         self.title = title
         self.body = body
         self.creatorID = creatorID
@@ -20,7 +20,7 @@ struct Task {
         guard let title = dict["title"] as? String,
             let body = dict["body"] as? String,
             let userID = dict["creatorID"] as? String,
-            let dateCreated = (dict["dateCreated"] as? Timestamp)?.dateValue() else { return nil }
+            let dateCreated = dict["dueDate"] as? Int else { return nil }
         
         self.title = title
         self.body = body
@@ -33,7 +33,8 @@ struct Task {
         return [
             "title": self.title,
             "body": self.body,
-            "creatorID": self.creatorID
+            "creatorID": self.creatorID,
+            "dueDate": self.dateCreated
         ]
     }
 }

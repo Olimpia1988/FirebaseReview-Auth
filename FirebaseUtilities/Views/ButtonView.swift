@@ -1,12 +1,5 @@
-//
-//  ButtonView.swift
-//  FirebaseReview
-//
-//  Created by Olimpia on 11/21/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import UIKit
+
 
 class ButtonView: UIView {
 

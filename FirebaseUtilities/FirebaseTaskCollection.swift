@@ -75,7 +75,7 @@ class FirestoreService {
     //MARK: Posts
     func createPost(post: Task, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = post.fieldsDict
-        fields["dateCreated"] = Date()
+        //fields["dateCreated"] = Date()
         db.collection(FireStoreCollections.tasks.rawValue).addDocument(data: fields) { (error) in
             if let error = error {
                 completion(.failure(error))
