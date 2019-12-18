@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if FirebaseAuthService.manager.currentUser != nil {
 
-            let homeVC = HomeViewController()
-            let navController = UINavigationController(rootViewController: homeVC)
+            let directionVC = DirectionViewController()
+            let navController = UINavigationController(rootViewController: directionVC)
 
             window?.rootViewController = navController
         } else {
