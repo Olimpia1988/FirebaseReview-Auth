@@ -17,13 +17,7 @@ class CreatePostVC: UIViewController {
         initalSetUp()
         
     }
-    
-   // let timeMade = String(Date().timeIntervalSince1970)
-
-    
-    
  
-    
     func initalSetUp() {
         postView.errorLabel.isHidden = true
         self.navigationController?.navigationBar.prefersLargeTitles = true

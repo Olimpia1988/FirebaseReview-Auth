@@ -10,7 +10,6 @@ class DirectionViewController: UIViewController {
         viewsAndDelegationsSetup()
         scheduleAction()
 
-       
     }
     
     private func viewsAndDelegationsSetup() {
@@ -22,7 +21,8 @@ class DirectionViewController: UIViewController {
     }
     
     @objc func goToCorrespondingVC() {
-        print("shit's happening ")
+      let taskVC = HomeViewController()
+      self.navigationController?.pushViewController(taskVC, animated: true)
         
     }
 
